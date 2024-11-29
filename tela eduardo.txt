@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_CLIENTES 100
+
+// Definição da estrutura Cliente
+typedef struct {
+    int idCliente;
+    char nome[45];
+    char endereco[100];
+    char email[45];
+    char telefone[15];
+} Cliente;
+
+int main() {
+    Cliente clientes[MAX_CLIENTES];
+    int numClientes = 0;
+    char continuar;
+
+    do {
+        // Preenche os dados do cliente
+        clientes[numClientes].idCliente = numClientes + 1; // ID auto-incremental
+        printf("Digite o nome: ");
+        fgets(clientes[numClientes].nome, sizeof(clientes[numClientes].nome), stdin);
+        clientes[numClientes].nome[strcspn(clientes[numClientes].nome, "\n")] = 0; // Remove a nova linha
+        printf("Digite o endereco: ");
+        fgets(clientes[numClientes].endereco, sizeof(clientes[numClientes].endereco), stdin);
+        clientes[numClientes].endereco[strcspn(clientes[numClientes].endereco, "\n")] = 0;
+        printf("Digite o email: ");
+        fgets(clientes[numClientes].email, sizeof(clientes[numClientes].email), stdin);
+        clientes[numClientes].email[strcspn(clientes[numClientes].email, "\n")] = 0;
+        printf("Digite o telefone: ");
+        fgets(clientes[numClientes].telefone, sizeof(clientes[numClientes].telefone), stdin);
+        clientes[numClientes].telefone[strcspn(clientes[numClientes].telefone, "\n")] = 0;
+
+        numClientes++;
+
+        // Pergunta se deseja continuar
+        printf("Deseja adicionar outro cliente? (s/n): ");
+        scanf(" %c", &continuar);
+        getchar(); // Limpa o buffer do teclado
+    } while (continuar == 's' && numClientes < MAX_CLIENTES);
+
+    // Exibe todos os clientes cadastrados
+    printf("\nClientes cadastrados:\n");
+    for (int i = 0; i < numClientes; i++) {
+        printf("ID: %d\n", clientes[i].idCliente);
+        printf("Nome: %s\n", clientes[i].nome);
+        printf("Endereco: %s\n", clientes[i].endereco);
+        printf("Email: %s\n", clientes[i].email);
+        printf("Telefone: %s\n\n", clientes[i].telefone);
+    }
+
+    return 0;
+}

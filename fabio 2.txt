@@ -1,0 +1,154 @@
+// 1. Imprime "Olá, Mundo!"
+#include <stdio.h>
+int main() {
+    printf("Olá, Mundo!\n");
+    return 0;
+}
+
+// 2. Lê um número inteiro e imprime o valor lido
+#include <stdio.h>
+int main() {
+    int numero;
+    scanf("%d", &numero);
+    printf("Você digitou: %d\n", numero);
+    return 0;
+}
+
+// 3. Soma de dois números inteiros
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    printf("Soma: %d\n", num1 + num2);
+    return 0;
+}
+
+// 4. Subtração de dois números inteiros
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    printf("Subtração: %d\n", num1 - num2);
+    return 0;
+}
+
+// 5. Produto de dois números inteiros
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    printf("Produto: %d\n", num1 * num2);
+    return 0;
+}
+
+// 6. Divisão de dois números inteiros
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    if (num2 != 0)
+        printf("Divisão: %.2f\n", (float)num1 / num2);
+    else
+        printf("Erro! Divisão por zero.\n");
+    return 0;
+}
+
+// 7. Verifica se o número é par ou ímpar
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    if (num % 2 == 0)
+        printf("Par\n");
+    else
+        printf("Ímpar\n");
+    return 0;
+}
+
+// 8. Imprime o quadrado de um número
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    printf("Quadrado: %d\n", num * num);
+    return 0;
+}
+
+// 9. Média aritmética de três números reais
+#include <stdio.h>
+int main() {
+    float num1, num2, num3;
+    scanf("%f %f %f", &num1, &num2, &num3);
+    printf("Média: %.2f\n", (num1 + num2 + num3) / 3);
+    return 0;
+}
+
+// 10. Imprime o dobro e a metade de um número
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    printf("Dobro: %d\n", num * 2);
+    printf("Metade: %.2f\n", num / 2.0);
+    return 0;
+}
+
+// 11. Troca de valores entre duas variáveis
+#include <stdio.h>
+int main() {
+    int num1, num2, temp;
+    scanf("%d %d", &num1, &num2);
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+    printf("Novo valor de num1: %d\n", num1);
+    printf("Novo valor de num2: %d\n", num2);
+    return 0;
+}
+
+// 12. Determina o maior e o menor número
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    if (num1 > num2)
+        printf("Maior: %d\nMenor: %d\n", num1, num2);
+    else
+        printf("Maior: %d\nMenor: %d\n", num2, num1);
+    return 0;
+}
+
+// 13. Soma dos números pares entre 5 números inteiros
+#include <stdio.h>
+int main() {
+    int num, soma = 0;
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &num);
+        if (num % 2 == 0)
+            soma += num;
+    }
+    printf("Soma dos pares: %d\n", soma);
+    return 0;
+}
+
+// 14. Verifica se um número é múltiplo de 5
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    if (num % 5 == 0)
+        printf("É múltiplo de 5\n");
+    else
+        printf("Não é múltiplo de 5\n");
+    return 0;
+}
+
+// 15. Conversão de Celsius para Fahrenheit
+#include <stdio.h>
+int main() {
+    float celsius, fahrenheit;
+    scanf("%f", &celsius);
+    fahrenheit = (celsius * 9/5) + 32;
+    printf("Fahrenheit: %.2f\n", fahrenheit);
+    return 0;
+}

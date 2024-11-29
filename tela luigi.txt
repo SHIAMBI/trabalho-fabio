@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+typedef struct {
+    int idProduto;
+    char Nome[MAX_LENGTH];
+    char Titulo[MAX_LENGTH];
+} Produto;
+
+void preencherProduto(Produto *p, int id) {
+    p->idProduto = id;
+
+    printf("Digite o nome do produto: ");
+    fgets(p->Nome, MAX_LENGTH, stdin);
+    p->Nome[strcspn(p->Nome, "\n")] = 0; // Remove newline
+
+    printf("Digite o título do produto: ");
+    fgets(p->Titulo, MAX_LENGTH, stdin);
+    p->Titulo[strcspn(p->Titulo, "\n")] = 0; // Remove newline
+}
+
+void exibirProduto(Produto p) {
+    printf("\nProduto cadastrado:\n");
+    printf("ID: %d\n", p.idProduto);
+    printf("Nome: %s\n", p.Nome);
+    printf("Título: %s\n", p.Titulo);
+}
+
+int main() {
+    Produto produto;
+    int id = 1; // Aqui poderia ser gerado automaticamente, simulando o AUTO_INCREMENT.
+
+    preencherProduto(&produto, id);
+    exibirProduto(produto);
+
+    return 0;
+}

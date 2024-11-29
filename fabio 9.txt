@@ -1,0 +1,228 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// 1. Números de 1 a 10
+void numerosDe1a10() {
+    printf("1. Números de 1 a 10: ");
+    for (int i = 1; i <= 10; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+// 2. Números até um valor
+void numerosAteValor() {
+    int n;
+    printf("2. Números até um Valor: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+// 3. Soma dos Números Pares
+void somaDosNumerosPares() {
+    int soma = 0;
+    for (int i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+            soma += i;
+        }
+    }
+    printf("3. Soma dos Números Pares de 1 a 100: %d\n", soma);
+}
+
+// 4. Adivinhação de Número
+void adivinhacaoNumero() {
+    int numero = 42, palpite;
+    printf("4. Adivinhação de Número: Tente adivinhar o número (42)\n");
+    while (1) {
+        printf("Digite seu palpite: ");
+        scanf("%d", &palpite);
+        if (palpite == numero) {
+            printf("Você acertou! O número era 42.\n");
+            break;
+        } else {
+            printf("Tente novamente!\n");
+        }
+    }
+}
+
+// 5. Média de Números
+void mediaDeNumeros() {
+    int soma = 0, num;
+    printf("5. Média de 10 Números: ");
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &num);
+        soma += num;
+    }
+    printf("Média: %.2f\n", soma / 10.0);
+}
+
+// 6. Tabela de Multiplicação
+void tabelaMultiplicacao() {
+    int num;
+    printf("6. Tabela de Multiplicação: ");
+    scanf("%d", &num);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+}
+
+// 7. Maior Número
+void maiorNumero() {
+    int n, maior;
+    printf("7. Maior Número: Quantos números você vai inserir? ");
+    scanf("%d", &n);
+    printf("Digite %d números:\n", n);
+    for (int i = 0; i < n; i++) {
+        int num;
+        scanf("%d", &num);
+        if (i == 0 || num > maior) {
+            maior = num;
+        }
+    }
+    printf("Maior número: %d\n", maior);
+}
+
+// 8. Soma dos Dígitos
+void somaDosDigitos() {
+    int num, soma = 0;
+    printf("8. Soma dos Dígitos: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        soma += num % 10;
+        num /= 10;
+    }
+    printf("Soma dos dígitos: %d\n", soma);
+}
+
+// 9. Leitura até Número Negativo
+void leituraAteNumeroNegativo() {
+    int num;
+    printf("9. Leitura até Número Negativo: ");
+    while (1) {
+        scanf("%d", &num);
+        if (num < 0) break;
+    }
+    printf("Você inseriu um número negativo! Fim da leitura.\n");
+}
+
+// 10. Leitura até Número Igual
+void leituraAteNumeroIgual() {
+    int num, anterior;
+    printf("10. Leitura até Número Igual: ");
+    scanf("%d", &anterior);
+    while (1) {
+        scanf("%d", &num);
+        if (num == anterior) break;
+        anterior = num;
+    }
+    printf("Você inseriu um número igual ao anterior! Fim da leitura.\n");
+}
+
+// 11. Número Primo
+void numeroPrimo() {
+    int num;
+    printf("11. Número Primo: ");
+    scanf("%d", &num);
+    int i = 2, primo = 1;
+    while (i <= num / 2) {
+        if (num % i == 0) {
+            primo = 0;
+            break;
+        }
+        i++;
+    }
+    if (primo && num > 1) {
+        printf("%d é um número primo.\n", num);
+    } else {
+        printf("%d não é um número primo.\n", num);
+    }
+}
+
+// 12. Número Palíndromo
+void numeroPalindromo() {
+    int num, original, invertido = 0;
+    printf("12. Número Palíndromo: ");
+    scanf("%d", &num);
+    original = num;
+    while (num != 0) {
+        invertido = invertido * 10 + num % 10;
+        num /= 10;
+    }
+    if (original == invertido) {
+        printf("%d é um número palíndromo.\n", original);
+    } else {
+        printf("%d não é um número palíndromo.\n", original);
+    }
+}
+
+// 13. Número Positivo, Negativo ou Zero
+void numeroPositivoNegativoZero() {
+    int num;
+    printf("13. Número Positivo, Negativo ou Zero: ");
+    scanf("%d", &num);
+    if (num > 0) {
+        printf("O número é positivo.\n");
+    } else if (num < 0) {
+        printf("O número é negativo.\n");
+    } else {
+        printf("O número é zero.\n");
+    }
+}
+
+// 14. Jogo de Adivinhação
+void jogoDeAdivinhacao() {
+    int numero, palpite;
+    srand(time(0));
+    numero = rand() % 100 + 1;
+    printf("14. Jogo de Adivinhação: Tente adivinhar o número entre 1 e 100.\n");
+    while (1) {
+        printf("Digite seu palpite: ");
+        scanf("%d", &palpite);
+        if (palpite < numero) {
+            printf("Muito baixo! Tente novamente.\n");
+        } else if (palpite > numero) {
+            printf("Muito alto! Tente novamente.\n");
+        } else {
+            printf("Parabéns! Você acertou o número.\n");
+            break;
+        }
+    }
+}
+
+// 15. Senha de 4 Dígitos
+void senhaDe4Digitos() {
+    int senha;
+    printf("15. Senha de 4 Dígitos: ");
+    while (1) {
+        scanf("%d", &senha);
+        if (senha == 1234) {
+            printf("ACESSO PERMITIDO!\n");
+            break;
+        } else {
+            printf("ACESSO NEGADO\n");
+        }
+    }
+}
+
+int main() {
+    numerosDe1a10();
+    numerosAteValor();
+    somaDosNumerosPares();
+    adivinhacaoNumero();
+    mediaDeNumeros();
+    tabelaMultiplicacao();
+    maiorNumero();
+    somaDosDigitos();
+    leituraAteNumeroNegativo();
+    leituraAteNumeroIgual();
+    numeroPrimo();
+    numeroPalindromo();
+    numeroPositivoNegativoZero();
+    jogoDeAdivinhacao();
+    senhaDe4Digitos();
+    return 0;
+}

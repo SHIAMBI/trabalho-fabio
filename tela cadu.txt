@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    int idFuncionario;        // ID do funcionário (auto incrementado)
+    char nome[46];           // Nome do funcionário
+    char cargo[46];          // Cargo do funcionário
+    double salario;          // Salário do funcionário
+    char telefone[16];       // Telefone do funcionário
+    char data_admissao[11];  // Data de admissão (formato: YYYY-MM-DD)
+} Funcionario;
+
+int main() {
+    Funcionario funcionario;
+   
+    // Simular auto incremento para idFuncionario
+    static int contadorIdFuncionario = 1;
+
+    printf("Cadastro de Funcionário\n");
+   
+    funcionario.idFuncionario = contadorIdFuncionario++;
+   
+    printf("Digite o Nome: ");
+    fgets(funcionario.nome, sizeof(funcionario.nome), stdin);
+    funcionario.nome[strcspn(funcionario.nome, "\n")] = '\0';  // Remove a nova linha
+   
+    printf("Digite o Cargo: ");
+    fgets(funcionario.cargo, sizeof(funcionario.cargo), stdin);
+    funcionario.cargo[strcspn(funcionario.cargo, "\n")] = '\0';  // Remove a nova linha
+
+    printf("Digite o Salário: ");
+    scanf("%lf", &funcionario.salario);
+   
+    printf("Digite o Telefone: ");
+    scanf("%s", funcionario.telefone);
+   
+    printf("Digite a Data de Admissão (YYYY-MM-DD): ");
+    scanf("%s", funcionario.data_admissao);
+   
+    printf("\nFuncionário cadastrado com sucesso!\n");
+    printf("ID do Funcionário: %d\n", funcionario.idFuncionario);
+    printf("Nome: %s\n", funcionario.nome);
+    printf("Cargo: %s\n", funcionario.cargo);
+    printf("Salário: %.2f\n", funcionario.salario);
+    printf("Telefone: %s\n", funcionario.telefone);
+    printf("Data de Admissão: %s\n", funcionario.data_admissao);
+   
+    return 0;
+}

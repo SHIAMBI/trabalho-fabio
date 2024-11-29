@@ -1,0 +1,207 @@
+// 1. Imprima os números de 1 a 10 usando um loop "for".
+#include <stdio.h>
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+
+// 2. Solicite ao usuário um número e imprima os números de 1 até o número inserido usando um loop "for".
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+
+// 3. Calcule a soma dos números pares de 1 a 100 usando um loop "for".
+#include <stdio.h>
+int main() {
+    int soma = 0;
+    for (int i = 2; i <= 100; i += 2) {
+        soma += i;
+    }
+    printf("Soma dos pares de 1 a 100: %d\n", soma);
+    return 0;
+}
+
+// 4. Peça ao usuário para adivinhar um número (por exemplo, 42) e continue pedindo até que o usuário acerte.
+#include <stdio.h>
+int main() {
+    int numero, adivinhar = 42;
+    do {
+        printf("Adivinhe o número: ");
+        scanf("%d", &numero);
+    } while (numero != adivinhar);
+    printf("Você acertou!\n");
+    return 0;
+}
+
+// 5. Calcule a média de 10 números fornecidos pelo usuário usando um loop "for".
+#include <stdio.h>
+int main() {
+    int soma = 0, num;
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &num);
+        soma += num;
+    }
+    printf("Média: %.2f\n", soma / 10.0);
+    return 0;
+}
+
+// 6. Exiba a tabela de multiplicação de um número fornecido pelo usuário usando um loop "for".
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+    return 0;
+}
+
+// 7. Encontre o maior número em uma lista de números fornecidos pelo usuário usando um loop "for".
+#include <stdio.h>
+int main() {
+    int n, maior = 0, num;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &num);
+        if (num > maior) {
+            maior = num;
+        }
+    }
+    printf("Maior número: %d\n", maior);
+    return 0;
+}
+
+// 8. Calcule a soma dos dígitos de um número inteiro fornecido pelo usuário usando um loop "for".
+#include <stdio.h>
+int main() {
+    int num, soma = 0;
+    scanf("%d", &num);
+    while (num != 0) {
+        soma += num % 10;
+        num /= 10;
+    }
+    printf("Soma dos dígitos: %d\n", soma);
+    return 0;
+}
+
+// 9. Leia números do usuário até que um número negativo seja inserido.
+#include <stdio.h>
+int main() {
+    int num;
+    do {
+        scanf("%d", &num);
+    } while (num >= 0);
+    return 0;
+}
+
+// 10. Leia números do usuário até que um número igual ao anterior seja inserido.
+#include <stdio.h>
+int main() {
+    int num, num_anterior;
+    scanf("%d", &num_anterior);
+    do {
+        scanf("%d", &num);
+        if (num == num_anterior) {
+            break;
+        }
+        num_anterior = num;
+    } while (1);
+    return 0;
+}
+
+// 11. Verifique se um número é primo usando um loop "while".
+#include <stdio.h>
+int main() {
+    int num, i, primo = 1;
+    scanf("%d", &num);
+    for (i = 2; i < num; i++) {
+        if (num % i == 0) {
+            primo = 0;
+            break;
+        }
+    }
+    if (primo && num > 1)
+        printf("Número primo\n");
+    else
+        printf("Não é primo\n");
+    return 0;
+}
+
+// 12. Verifique se um número é um palíndromo usando um loop "while".
+#include <stdio.h>
+int main() {
+    int num, reverso = 0, original, digito;
+    scanf("%d", &num);
+    original = num;
+    while (num != 0) {
+        digito = num % 10;
+        reverso = reverso * 10 + digito;
+        num /= 10;
+    }
+    if (original == reverso)
+        printf("Palíndromo\n");
+    else
+        printf("Não é palíndromo\n");
+    return 0;
+}
+
+// 13. Verifique se um número é positivo, negativo ou zero, usando um loop "while".
+#include <stdio.h>
+int main() {
+    int num;
+    while (1) {
+        scanf("%d", &num);
+        if (num > 0) {
+            printf("Positivo\n");
+            break;
+        } else if (num < 0) {
+            printf("Negativo\n");
+            break;
+        } else {
+            printf("Zero\n");
+            break;
+        }
+    }
+    return 0;
+}
+
+// 14. Simule um jogo de adivinhação. O programa deve gerar um número aleatório e pedir ao usuário para adivinhar o número.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    srand(time(0));
+    int numero, adivinhar = rand() % 100 + 1;
+    do {
+        printf("Adivinhe o número (1-100): ");
+        scanf("%d", &numero);
+        if (numero < adivinhar)
+            printf("Tente um número maior.\n");
+        else if (numero > adivinhar)
+            printf("Tente um número menor.\n");
+    } while (numero != adivinhar);
+    printf("Você acertou!\n");
+    return 0;
+}
+
+// 15. Solicite uma senha de 4 dígitos. O programa deve continuar pedindo a senha até que a senha correta (1234) seja inserida.
+#include <stdio.h>
+int main() {
+    int senha;
+    do {
+        printf("Digite a senha de 4 dígitos: ");
+        scanf("%d", &senha);
+        if (senha != 1234)
+            printf("ACESSO NEGADO\n");
+    } while (senha != 1234);
+    printf("ACESSO PERMITIDO!\n");
+    return 0;
+}

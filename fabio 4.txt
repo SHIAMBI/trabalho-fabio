@@ -1,0 +1,139 @@
+// 1. Número Positivo ou Negativo
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    if (num > 0)
+        printf("Positivo\n");
+    else if (num < 0)
+        printf("Negativo\n");
+    else
+        printf("Zero\n");
+    return 0;
+}
+
+// 2. Maior de Dois Números
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    if (num1 > num2)
+        printf("Maior: %d\n", num1);
+    else if (num2 > num1)
+        printf("Maior: %d\n", num2);
+    else
+        printf("Os números são iguais\n");
+    return 0;
+}
+
+// 3. Número Par ou Ímpar
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    if (num % 2 == 0)
+        printf("Par\n");
+    else
+        printf("Ímpar\n");
+    return 0;
+}
+
+// 4. Nota Aprovada ou Reprovada
+#include <stdio.h>
+int main() {
+    float nota;
+    scanf("%f", &nota);
+    if (nota >= 6)
+        printf("Aprovado\n");
+    else
+        printf("Reprovado\n");
+    return 0;
+}
+
+// 5. Checagem de Idade
+#include <stdio.h>
+int main() {
+    int idade;
+    scanf("%d", &idade);
+    if (idade >= 18)
+        printf("Maior de idade\n");
+    else
+        printf("Menor de idade\n");
+    return 0;
+}
+
+// 6. Verificação de Ano Bissexto
+#include <stdio.h>
+int main() {
+    int ano;
+    scanf("%d", &ano);
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0))
+        printf("Ano bissexto\n");
+    else
+        printf("Não é ano bissexto\n");
+    return 0;
+}
+
+// 7. Salário com Desconto
+#include <stdio.h>
+int main() {
+    float salario;
+    scanf("%f", &salario);
+    if (salario > 2000)
+        salario -= salario * 0.10;
+    printf("Salário: %.2f\n", salario);
+    return 0;
+}
+
+// 8. Intervalo de Valores
+#include <stdio.h>
+int main() {
+    int num;
+    scanf("%d", &num);
+    if (num >= 10 && num <= 20)
+        printf("Dentro do intervalo\n");
+    else
+        printf("Fora do intervalo\n");
+    return 0;
+}
+
+// 9. Calculadora Simples
+#include <stdio.h>
+int main() {
+    float num1, num2;
+    char operacao;
+    scanf("%f %f %c", &num1, &num2, &operacao);
+    switch (operacao) {
+        case '+':
+            printf("Resultado: %.2f\n", num1 + num2);
+            break;
+        case '-':
+            printf("Resultado: %.2f\n", num1 - num2);
+            break;
+        case '*':
+            printf("Resultado: %.2f\n", num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0)
+                printf("Resultado: %.2f\n", num1 / num2);
+            else
+                printf("Erro! Divisão por zero.\n");
+            break;
+        default:
+            printf("Operação inválida\n");
+    }
+    return 0;
+}
+
+// 10. Verificação de Senha
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char senha[20];
+    scanf("%s", senha);
+    if (strcmp(senha, "senha123") == 0)
+        printf("Senha correta\n");
+    else
+        printf("Senha incorreta\n");
+    return 0;
+}

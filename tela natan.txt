@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+typedef struct {
+    int idProduto;
+    int quantidade;
+} ItemDeVenda;
+
+void adicionarItem(ItemDeVenda *item) {
+    printf("Digite o ID do Produto: ");
+    scanf("%d", &item->idProduto);
+   
+    printf("Digite a Quantidade: ");
+    scanf("%d", &item->quantidade);
+   
+    printf("Item adicionado: ID do Produto = %d, Quantidade = %d\n", item->idProduto, item->quantidade);
+}
+
+int main() {
+    ItemDeVenda item;
+    int opcao;
+   
+    do {
+        printf("Menu:\n");
+        printf("1. Adicionar Item\n");
+        printf("2. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+       
+        switch (opcao) {
+            case 1:
+                adicionarItem(&item);
+                break;
+            case 2:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 2);
+
+    return 0;
+}
